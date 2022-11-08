@@ -53,8 +53,11 @@
       introduce: '取得优势的武器可以输出成吨的伤害'
     }
   ])
+
+  const loading = ref(false)
 </script>
 
 <template>
-  <f-table :data="data" :columns="columns" :height="300" />
+  <f-button type="primary" @click="loading = !loading">toggle</f-button>
+  <f-table v-loading="loading" :data="data" :columns="columns" :height="300" />
 </template>
