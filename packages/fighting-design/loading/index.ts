@@ -4,6 +4,7 @@ import { vLoading } from './src/directive'
 import { install, installDirective } from '../_utils'
 
 export const FLoadingDirective = installDirective(vLoading, 'loading')
+
 export const FLoading = install({
   directive: FLoadingDirective
 })

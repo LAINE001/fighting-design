@@ -1,3 +1,3 @@
 import type { Plugin } from 'vue'
 
-export type InstallType<T> = T & Plugin
+export type InstallType<T> = T & Plugin & Directive
