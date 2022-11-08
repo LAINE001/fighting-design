@@ -55,9 +55,32 @@
   ])
 
   const loading = ref(false)
+  const loading2 = ref(false)
+  const onToggleFullscreen = (): void => {
+    loading2.value = !loading2.value
+    setTimeout(() => {
+      loading2.value = !loading2.value
+    }, 2000)
+  }
 </script>
 
 <template>
   <f-button type="primary" @click="loading = !loading">toggle</f-button>
+  <f-button type="primary" @click="onToggleFullscreen">toggle全屏loading</f-button>
   <f-table v-loading="loading" :data="data" :columns="columns" :height="300" />
+  <div v-loading="loading" f-loading-text="加载中">
+    <p>hello, world</p>
+    <p>代码是写给别人看的</p>
+    <p>顺带能在机器上运行</p>
+  </div>
+  <div v-loading="loading" f-loading-text="请稍后" f-loading-mode="light">
+    <p>hello, world</p>
+    <p>代码是写给别人看的</p>
+    <p>顺带能在机器上运行</p>
+  </div>
+  <div v-loading.fullscreen="loading2">
+    <p>hello, world</p>
+    <p>代码是写给别人看的</p>
+    <p>顺带能在机器上运行</p>
+  </div>
 </template>

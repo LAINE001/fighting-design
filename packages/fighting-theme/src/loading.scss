@@ -16,6 +16,9 @@
   background: rgba($color: #666, $alpha: .82);
   color: $primary;
   &.f-loading--dark {
+    background: rgba($color: #666, $alpha: .82);
+  }
+  &.f-loading--light {
     background: rgba($color: #fff, $alpha: .82);
   }
   &.f-loading--fullscreen {

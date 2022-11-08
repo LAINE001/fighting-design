@@ -24,11 +24,11 @@
     } as const
   })
   const classList = computed(() => {
-    const { mode, background, fullscreen = false } = prop
+    const { mode, fullscreen = false } = prop
     return [
       'f-loading',
+      `f-loading--${mode === 'light' ? 'light' : 'dark'}`,
       {
-        'f-loading--dark': !background && mode === 'dark',
         'f-loading--fullscreen': fullscreen
       }
     ] 
