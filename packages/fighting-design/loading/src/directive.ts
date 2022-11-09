@@ -26,13 +26,6 @@ const optionsOrganizer = (
     // 从attribute中获取配置前，先尝试从v-loading="{}"中获取、
     return getBindingProp(propKey) || el.getAttribute(`f-loading-${propKey}`) || ''
   }
-
-  // const getIcon = async (binding) => {
-  //   const f = import('@fighting-design/fighting-icon')
-  //   const res = await f
-  //   const k = binding.value.icon
-  //   return res[k]
-  // }
   const options: LoadingPropsType = {
     visible: !!binding.value,
     text: getProp('text'),
@@ -40,9 +33,6 @@ const optionsOrganizer = (
     fullscreen: binding.modifiers.fullscreen,
     background: getProp('background'),
     mode: getProp('mode') as LoadingBackgroundMode
-    // icon: null
-    // icon: getIcon(binding)
-    // icon: getProp('icon')
   }
   // console.log(options, 'opts')
   return options
@@ -73,7 +63,6 @@ const destoryLoading = (el: FLoadingEl): void => {
 
 export const vLoading: Directive = {
   mounted (el, binding) {
-    // console.log(binding.value, 'mounted')
     const originalPosition = getComputedStyle(el)['position'] || 'static'
     el.originalPosition = originalPosition
     if (binding.value) {
@@ -81,7 +70,6 @@ export const vLoading: Directive = {
     }
   },
   updated (el, binding) {
-    // console.log(binding.value, 'updated')
     if (binding.value !== binding.oldValue) {
       if (!binding.value) {
         destoryLoading(el)

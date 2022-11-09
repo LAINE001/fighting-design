@@ -1,36 +1,37 @@
 # Loading 加载
 
-`Loading` 用于加载状态的提示
+`Loading` 用于加载状态的提示，可通过组件内置指令便捷使用
 
 - [源代码](https://github.com/FightingDesign/fighting-design/tree/master/packages/fighting-design/loading)
 - [文档编辑](https://github.com/FightingDesign/fighting-design/blob/master/docs/docs/components/loading.md)
 
 ## 基本使用
 
-`show` 属性可以控制是否展示 `loading` 加载
+通过指令`v-loading`，传入`Boolean`即可切换loading
 
-<f-button type="primary" @click="onclick1">开始 loading</f-button>
-<f-loading :show="loading1" />
+<f-button type="primary" @click="onclick1">切换 loading</f-button>
+<div v-loading="loading1">
+  <p>那天她走了</p>
+  <p>像风一样</p>
+</div>
 
 ::: details 显示代码
 
 ```html
 <template>
   <f-button type="primary" @click="onclick1">开始 loading</f-button>
-  <f-loading :show="loading1" />
+  <div v-loading="loading1">
+    <p>那天她走了</p>
+    <p>像风一样</p>
+  </div>
 </template>
 
 <script lang="ts" setup>
   import { ref } from 'vue'
 
   const loading1 = ref(false)
-
   const onclick1 = () => {
-    loading1.value = true
-
-    setTimeout(() => {
-      loading1.value = false
-    }, 1500)
+    loading1.value = !loading1.value
   }
 </script>
 ```
@@ -39,31 +40,101 @@
 
 ## 自定义文案
 
-`text` 和 `icon` 属性可以自定义说明文字和展示的 `icon`
+可通过元素`attribute`方式展示自定义文案
 
-<f-button type="primary" @click="onclick2">玩命加载</f-button>
-<f-loading :show="loading2" text="玩命加载中……" :icon="FIconSnowflake" />
+<f-button type="primary" @click="onclick2">展示文字</f-button>
+<div v-loading="loading2" f-loading-text="加载中">
+  <p>在夜色中</p>
+  <p>我有三次受难</p>
+  <p>我有三种幸福</p>
+</div>
 
 ::: details 显示代码
 
 ```html
 <template>
-  <f-button type="primary" @click="onclick2">玩命加载</f-button>
-  <f-loading :show="loading2" text="玩命加载中……" :icon="FIconSnowflake" />
+  <f-button type="primary" @click="onclick2">展示文字</f-button>
+  <div v-loading="loading2" f-loading-text="加载中">
+    <p>在夜色中</p>
+    <p>我有三次受难</p>
+    <p>我有三种幸福</p>
+  </div>
 </template>
 
 <script lang="ts" setup>
   import { ref } from 'vue'
-  import { FIconSnowflake } from '@fighting-design/fighting-icon'
 
   const loading2 = ref(false)
-
   const onclick2 = () => {
     loading2.value = true
+  }
+</script>
+```
 
+:::
+
+## 白色背景
+
+通过属性`mode`可设置loading背景遮罩样式。可选`dark`、`light`
+
+<f-button type="primary" @click="onclick3">切换loading</f-button>
+<div v-loading="loading3" f-loading-text="加载中.." f-loading-mode="light">
+  <p>流浪、爱情、生存</p>
+  <p>诗歌、王位、太阳</p>
+</div>
+
+::: details
+
+```html
+<template>
+  <f-button type="primary" @click="onclick2">展示文字</f-button>
+  <div v-loading="loading2" f-loading-text="加载中">
+    <p>流浪、爱情、生存</p>
+    <p>诗歌、王位、太阳</p>
+  </div>
+</template>
+
+<script lang="ts" setup>
+  import { ref } from 'vue'
+
+  const loading2 = ref(false)
+  const onclick2 = () => {
+    loading2.value = true
+  }
+</script>
+```
+
+:::
+
+
+## 全屏加载
+
+通过指令修饰符`fullscreen`可使loading全屏显示
+
+<f-button type="primary" @click="onclick4">切换loading</f-button>
+<div v-loading.fullscreen="loading4">
+  <p>全屏loading</p>
+</div>
+
+::: details
+
+```html
+<template>
+  <f-button type="primary" @click="onclick4">展示文字</f-button>
+  <div v-loading.fullscreen="loading4">
+    <p>全屏loading</p>
+  </div>
+</template>
+
+<script lang="ts" setup>
+  import { ref } from 'vue'
+
+  const loading4 = ref(false)
+  const onclick4 = () => {
+    loading4.value = !loading4.value
     setTimeout(() => {
-      loading2.value = false
-    }, 1500)
+      loading4.value = !loading4.value
+    }, 2000)
   }
 </script>
 ```
@@ -118,20 +189,26 @@ import type { LoadingInstance, LoadingPropsType } from 'fighting-design'
   import { FIconSnowflake } from '@fighting-design/fighting-icon'
 
   const loading1 = ref(false)
-
   const onclick1 = () => {
-    loading1.value = true
-    setTimeout(() => {
-      loading1.value = false
-    }, 1500)
+    loading1.value = !loading1.value
   }
 
   const loading2 = ref(false)
-
   const onclick2 = () => {
-    loading2.value = true
+    loading2.value = !loading2.value
+  }
+
+  const loading3 = ref(false)
+  const onclick3 = () => {
+    loading3.value = !loading3.value
+  }
+
+  const loading4 = ref(false)
+  const onclick4 = () => {
+    loading4.value = !loading4.value
+
     setTimeout(() => {
-      loading2.value = false
-    }, 1500)
+      loading4.value = !loading4.value
+    }, 2000)
   }
 </script>

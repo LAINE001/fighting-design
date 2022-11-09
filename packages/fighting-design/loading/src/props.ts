@@ -23,8 +23,7 @@ export const Props = {
     type: String as PropType<LoadingBackgroundMode>
   },
   icon: {
-    type: Object as PropType<VNode | Component>,
-    default: (): null => null
+    type: Object as PropType<VNode | Component>
   }
   // closeEnd: {
   //   type: Function as PropType<HandleMouseEventInterface>,
