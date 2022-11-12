@@ -83,7 +83,7 @@
   <p>诗歌、王位、太阳</p>
 </div>
 
-::: details
+::: details 显示代码
 
 ```html
 <template>
@@ -116,7 +116,7 @@
   <p>全屏loading</p>
 </div>
 
-::: details
+::: details 显示代码
 
 ```html
 <template>
@@ -152,27 +152,6 @@
 | `f-loading-fontColor`  | 文字及icon颜色  | string          |  ——   |   `主题色`   |
 
 
-## Attributes
-
-| 参数         | 说明                 | 类型                       | 可选值 | 默认值 |
-| ------------ | -------------------- | -------------------------- | ------ | ------ |
-| `show`       | 是否展示 loading     | boolean                    | ——     | false  |
-| `close`      | 是否点击可以关闭     | boolean                    | ——     | false  |
-| `text`       | 说明文字             | string                     | ——     | ——     |
-| `icon`       | loading 的 icon      | object (VNode / Component) | ——     | null   |
-| `font-color` | 说明文字颜色         | string                     | ——     | ——     |
-| `icon-color` | loading 的 icon 颜色 | string                     | ——     |
-| `font-size`  | 说明文字大小         | string                     | ——     | ——     |
-| `background` | 遮罩层背景色         | string                     | ——     | ——     |
-| `opacity`    | 遮罩层透明度         | number                     | ——     | ——     |
-| `close-end`  | 关闭之后执行的回调   | Function                   | ——     | null   |
-
-## Slots
-
-| 插槽名称 | 说明说明    |
-| -------- | ----------- |
-| `icon`   | 自定义 icon |
-
 ## Interface
 
 组件导出以下类型定义：
@@ -193,6 +172,10 @@ import type { LoadingInstance, LoadingPropsType } from 'fighting-design'
 
 <a href="https://github.com/Alphatrionty" target="_blank">
   <f-avatar round src="https://avatars.githubusercontent.com/u/57850101?v=4" />
+</a>
+
+<a href="https://github.com/laine001" target="_blank">
+  <f-avatar round src="https://avatars.githubusercontent.com/u/40457081?v=4" />
 </a>
 
 <script setup>
