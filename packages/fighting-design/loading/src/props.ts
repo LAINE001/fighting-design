@@ -25,10 +25,6 @@ export const Props = {
   icon: {
     type: Object as PropType<VNode | Component>
   }
-  // closeEnd: {
-  //   type: Function as PropType<HandleMouseEventInterface>,
-  //   default: (): null => null
-  // }
 } as const
 
 export type LoadingPropsType = ExtractPropTypes<typeof Props>

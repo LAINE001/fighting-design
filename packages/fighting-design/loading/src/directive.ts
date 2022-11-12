@@ -4,7 +4,7 @@ import type { Directive, ComponentPublicInstance, App, DirectiveBinding } from '
 import type { LoadingPropsType } from './props'
 import type { LoadingBackgroundMode } from './interface'
 
-export interface FLoadingEl extends HTMLElement {
+interface FLoadingEl extends HTMLElement {
   vm: ComponentPublicInstance
   loadingInstance: App | null
   originalPosition: string
@@ -34,7 +34,6 @@ const optionsOrganizer = (
     background: getProp('background'),
     mode: getProp('mode') as LoadingBackgroundMode
   }
-  // console.log(options, 'opts')
   return options
 }
 

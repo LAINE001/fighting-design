@@ -3,17 +3,11 @@
   import { Props } from './props'
   import { FSvgIcon } from '../../svg-icon'
   import { FIconLoadingAVue } from '../../_svg'
+  
   import type { ComputedRef, CSSProperties } from 'vue'
-
-  // import type { HandleMouseEventInterface } from '../../_interface'
   import type { LoadingPropsType } from './props'
 
   const prop: LoadingPropsType = defineProps(Props)
-
-  // 点击
-  // const handleClick: HandleMouseEventInterface = (evt: MouseEvent): void => {
-  //   prop.closeEnd && prop.closeEnd(evt)
-  // }
 
   // 样式列表
   const styleList: ComputedRef<CSSProperties> = computed((): CSSProperties => {
@@ -31,7 +25,7 @@
       {
         'f-loading--fullscreen': fullscreen
       }
-    ] 
+    ] as const
   })
 </script>
 

@@ -88,7 +88,7 @@
 ```html
 <template>
   <f-button type="primary" @click="onclick2">展示文字</f-button>
-  <div v-loading="loading2" f-loading-text="加载中">
+  <div v-loading="loading2" f-loading-text="加载中" f-loading-mode="light">
     <p>流浪、爱情、生存</p>
     <p>诗歌、王位、太阳</p>
   </div>
@@ -140,6 +140,17 @@
 ```
 
 :::
+
+## Directive
+
+| 名称         | 说明                 | 类型                       | 可选值 | 默认值 |
+| ------------ | -------------------- | -------------------------- | ------ | ------ |
+| `v-loading`       | 是否展示 loading     | boolean                | ——     | false  |
+| `f-loading-text`  | loading文字         | string                  | ——     | ——     |
+| `f-loading-mode`  | 背景色模式         | string            | `dark` / `light`  |  `dark`    |
+| `f-loading-background`  | 背景色        | string           |  ——   |  ——            |
+| `f-loading-fontColor`  | 文字及icon颜色  | string          |  ——   |   `主题色`   |
+
 
 ## Attributes
 
