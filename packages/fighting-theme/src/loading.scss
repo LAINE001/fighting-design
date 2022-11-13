@@ -1,5 +1,10 @@
 @import '../config/const-color.scss';
 
+.f-loading__wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
 .f-loading {
   position: absolute;
   top: 0;

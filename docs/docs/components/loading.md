@@ -10,6 +10,7 @@
 通过指令`v-loading`，传入`Boolean`即可切换loading
 
 <f-button type="primary" @click="onclick1">切换 loading</f-button>
+
 <div v-loading="loading1">
   <p>那天她走了</p>
   <p>像风一样</p>

@@ -42,7 +42,8 @@ const insertLoadingDom = (
   binding: DirectiveBinding
 ): void => {
   if (el.originalPosition !== 'absolute' && el.originalPosition !== 'fixed') {
-    el.style.position = 'relative'
+    // el.style.position = 'relative'
+    el.classList.add('f-loading__wrapper')
   }
   const options = optionsOrganizer(el, binding)
   const loadingInstance = createApp(Loading, options)
@@ -54,7 +55,8 @@ const insertLoadingDom = (
 
 const destoryLoading = (el: FLoadingEl): void => {
   if (!el.loadingInstance) return
-  el.style.position = el.originalPosition
+  el.classList.remove('f-loading__wrapper')
+  // el.style.position = el.originalPosition
   el?.removeChild(el?.vm?.$el)
   el.loadingInstance.unmount()
   el.loadingInstance = null
